@@ -57,6 +57,7 @@ import tiktoken
 # Constants
 #DEFAULT_MODEL = "gpt-4-0613"
 DEFAULT_MODEL = "gpt-4-0314"
+MIN_WIDTH = 7
 
 # The function num_tokens_from_messages is copied from the OpenAI cookbook: 
 # https://github.com/openai/openai-cookbook/blob/main/examples/How_to_count_tokens_with_tiktoken.ipynb
@@ -94,9 +95,12 @@ def num_tokens_from_messages(messages, model="gpt-3.5-turbo-0301"):
 def count_tokens_in_file(file, model):
     text = file.read()
     # Here we assume the text from each file is a single message
-    message = [{"role": "user", "content": text.strip()}]
+    message = [{"role": "system", "content": text.strip()}]
     num_tokens = num_tokens_from_messages(message, model)
-    print(f"{num_tokens} {file.name}")
+    if num_tokens is None:
+        print(f"Warning: token count failed for {file.name}")
+        num_tokens = 0
+    return num_tokens
 
 def main():
     parser = argparse.ArgumentParser(description='Counts the number of tokens in the given files.')
@@ -107,8 +111,18 @@ def main():
                         help='the OpenAI model to use (default: {})'.format(DEFAULT_MODEL))
     args = parser.parse_args()
 
+    total = 0
+    results = []
     for file in args.files:
-        count_tokens_in_file(file, args.model)
+        num_tokens = count_tokens_in_file(file, args.model)
+        results.append((num_tokens, file.name))
+        total += num_tokens
+
+    for num_tokens, file_name in results:
+        print(f"{num_tokens:>{MIN_WIDTH}} {file_name}")
+
+    if len(results) > 1:
+        print(f"{total:>{MIN_WIDTH}} total")
 
 if __name__ == '__main__':
     main()
