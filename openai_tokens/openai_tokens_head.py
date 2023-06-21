@@ -30,10 +30,10 @@ OPTIONS
 
 EXAMPLES
     Output the first 100 tokens from a file:
-    ./openai-tokens-head -n 100 example.txt
+    openai-tokens-head -n 100 example.txt
 
     Output the first 50 tokens using a different model:
-    ./openai-tokens-head --model "gpt-3.5-turbo-0301" -n 50 example.txt
+    openai-tokens-head --model "gpt-3.5-turbo-0301" -n 50 example.txt
 
 AUTHORS
     Written by GPT-4.

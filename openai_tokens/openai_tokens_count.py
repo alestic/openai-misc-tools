@@ -30,16 +30,16 @@ OPTIONS
 
 EXAMPLES
     Count tokens in a single file:
-    ./openai-tokens-count example.txt
+    openai-tokens-count example.txt
 
     Count tokens in multiple files:
-    ./openai-tokens-count file1.txt file2.txt
+    openai-tokens-count file1.txt file2.txt
 
     Count tokens in standard input:
-    cat example.txt | ./openai-tokens-count
+    cat example.txt | openai-tokens-count
 
     Count tokens using a different model:
-    ./openai-tokens-count --model "gpt-3.5-turbo-0301" example.txt
+    openai-tokens-count --model "gpt-3.5-turbo-0301" example.txt
 
 AUTHORS
     Written by GPT-4.
