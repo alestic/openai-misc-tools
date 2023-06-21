@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 """
 NAME
-    openai-token-head - output the first `--tokens COUNT` tokens from
+    openai-tokens-head - output the first `--tokens COUNT` tokens from
     the input file(s) or stdin
 
 SYNOPSIS
-    openai-token-head [options] file...
+    openai-tokens-head [options] file...
 
 DESCRIPTION
-    openai-token-head reads the specified text files and outputs the first
+    openai-tokens-head reads the specified text files and outputs the first
     `--tokens COUNT` tokens according to the OpenAI model's specifications.
     With more than one FILE, precede each with a header giving the file name.
 
-    If no file is specified, or if the file is -, openai-token-head
+    If no file is specified, or if the file is -, openai-tokens-head
     reads from standard input.
 
 OPTIONS
@@ -26,14 +26,14 @@ OPTIONS
     file
         The text file to get tokens from. Multiple files can be
         specified. If no file is provided or if the file is '-',
-        openai-token-head reads from standard input.
+        openai-tokens-head reads from standard input.
 
 EXAMPLES
     Output the first 100 tokens from a file:
-    ./openai-token-head -n 100 example.txt
+    ./openai-tokens-head -n 100 example.txt
 
     Output the first 50 tokens using a different model:
-    ./openai-token-head --model "gpt-3.5-turbo-0301" -n 50 example.txt
+    ./openai-tokens-head --model "gpt-3.5-turbo-0301" -n 50 example.txt
 
 AUTHORS
     Written by GPT-4.

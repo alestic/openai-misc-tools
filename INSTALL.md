@@ -33,14 +33,14 @@ Before installing `openai-tokens`, ensure you have the following installed on yo
     pip install . --user
     ```
 
-5. After the installation process completes, you should be able to use the `openai-token-count` command in your terminal.
+5. After the installation process completes, you should be able to use the `openai-tokens-count` command in your terminal.
 
 ## Troubleshooting
 
 If you encounter any issues during installation, please verify that your Python and `pip` versions are up-to-date.
 
-## Using the `openai-token-count` Command
+## Using the `openai-tokens-count` Command
 
-With `openai-tokens` installed, you can count tokens in text files according to a specified OpenAI model. Run `openai-token-count --help` for more details on how to use it.
+With `openai-tokens` installed, you can count tokens in text files according to a specified OpenAI model. Run `openai-tokens-count --help` for more details on how to use it.
 
 Enjoy using `openai-tokens`!
