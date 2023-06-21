@@ -53,8 +53,6 @@ DATE
 import argparse
 import sys
 import openai_tokens
-#from openai_tokens import count_tokens_in_file, count_tokens_in_text
-#import openai_tokens.openai_tokens
 
 
 # Constants

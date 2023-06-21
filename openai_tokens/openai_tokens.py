@@ -46,3 +46,17 @@ def count_tokens_in_file(file, model):
         print(f"Warning: token count failed for {file.name}")
         num_tokens = 0
     return num_tokens
+
+def head_tokens_text(text, model, count):
+    """Returns the first count tokens from text according to the model's encoding."""
+    try:
+        encoding = tiktoken.encoding_for_model(model)
+    except KeyError:
+        print("Warning: model not found. Using cl100k_base encoding.")
+        encoding = tiktoken.get_encoding("cl100k_base")
+
+    tokens = encoding.encode(text)
+    head_tokens = tokens[:count]
+    head_text = encoding.decode(head_tokens)
+
+    return head_text

@@ -7,6 +7,7 @@ setup(
     entry_points={
         "console_scripts": [
             "openai-token-count = openai_tokens.openai_token_count:main",
+            "openai-token-head = openai_tokens.openai_token_head:main",
         ]
     },
     install_requires=[
