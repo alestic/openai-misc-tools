@@ -13,7 +13,7 @@ setup(
         ]
     },
     install_requires=[
-        "configparser"
+        "configparser",
         "moviepy",
         "openai",
         "pydub",
