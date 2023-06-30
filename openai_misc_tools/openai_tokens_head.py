@@ -46,7 +46,7 @@ DATE
 
 import argparse
 import sys
-import openai_tokens
+from . import openai_tokens
 
 # Constants
 DEFAULT_MODEL = "gpt-4-0314"

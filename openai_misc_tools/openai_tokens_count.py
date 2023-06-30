@@ -52,7 +52,7 @@ DATE
 
 import argparse
 import sys
-import openai_tokens
+from . import openai_tokens
 
 
 # Constants
